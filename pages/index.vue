@@ -101,7 +101,7 @@ export default {
       setInterval(() => {
         _this.circle.pos.x += (_this.mouse.pos.x - _this.circle.pos.x) / 6
         _this.circle.pos.y += (_this.mouse.pos.y - _this.circle.pos.y) / 6
-      }, 20)
+      }, 10)
     },
 
     initRolesFadeEffect() {
