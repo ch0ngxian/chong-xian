@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white h-screen" @mousemove="onMouseMove">
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,6 +31,11 @@
         </div>
       </div>
     </Main>
+    <div
+      id="cursor-circle"
+      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-50 block"
+      :style="{ left: `${circle.pos.x}px`, top: `${circle.pos.y}px` }"
+    ></div>
   </div>
 </template>
 
@@ -64,39 +69,68 @@ export default {
           is_hidden: true,
         },
       ],
+      circle: {
+        pos: {
+          x: 0,
+          y: 0,
+        },
+      },
+      mouse: {
+        pos: {
+          x: 0,
+          y: 0,
+        },
+      },
     }
   },
   created() {
-    const _this = this
-
-    setInterval(async () => {
-      const originalRoleIndex = _this.active_role_index
-      _this.active_role_index = null
-
-      _this.active_role_index = originalRoleIndex + 1
-
-      if (_this.active_role_index >= _this.roles.length) {
-        _this.active_role_index = 0
-      }
-
-      _this.roles.map((role, index) => {
-        role.is_active = false
-        return role
-      })
-
-      await _this.timeout(1000)
-
-      _this.roles.map(async (role, index) => {
-        role.is_hidden = index !== _this.active_role_index
-        await _this.timeout(100)
-        role.is_active = index === _this.active_role_index
-        return role
-      })
-    }, 4000)
+    this.initCircleFollowMouse()
+    this.initRolesFadeEffect()
   },
   methods: {
     timeout(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms))
+    },
+    onMouseMove(e) {
+      this.mouse.pos.x = e.pageX - 20
+      this.mouse.pos.y = e.pageY - 20
+    },
+    initCircleFollowMouse() {
+      const _this = this
+
+      setInterval(() => {
+        _this.circle.pos.x += (_this.mouse.pos.x - _this.circle.pos.x) / 6
+        _this.circle.pos.y += (_this.mouse.pos.y - _this.circle.pos.y) / 6
+      }, 20)
+    },
+
+    initRolesFadeEffect() {
+      const _this = this
+
+      setInterval(async () => {
+        const originalRoleIndex = _this.active_role_index
+        _this.active_role_index = null
+
+        _this.active_role_index = originalRoleIndex + 1
+
+        if (_this.active_role_index >= _this.roles.length) {
+          _this.active_role_index = 0
+        }
+
+        _this.roles.map((role, index) => {
+          role.is_active = false
+          return role
+        })
+
+        await _this.timeout(1000)
+
+        _this.roles.map(async (role, index) => {
+          role.is_hidden = index !== _this.active_role_index
+          await _this.timeout(100)
+          role.is_active = index === _this.active_role_index
+          return role
+        })
+      }, 4000)
     },
   },
 }
@@ -122,5 +156,10 @@ export default {
 
 .role.active:after {
   transform: scaleX(0);
+}
+
+.circle-invert {
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
 </style>
