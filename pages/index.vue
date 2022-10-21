@@ -9,8 +9,8 @@
       />
     </head>
     <Main>
-      <div class="h-[1px] bg-gray-100 mx-20 md:mx-64"></div>
-      <div class="mx-20 md:mx-64 mt-20 mb-40">
+      <div class="h-[1px] bg-gray-200 sm:mx-64"></div>
+      <div class="mx-10 sm:mx-64 mt-20 mb-40">
         Hello, I am Chong Xian.
         <br />
         <div class="flex">
@@ -30,23 +30,23 @@
           </div>
         </div>
       </div>
-      <!-- <div class="h-[1px] bg-gray-100 my-10 mx-20 md:mx-64"></div>
+      <!-- <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
 
-      <div class="mx-20 md:mx-64 mb-40">
+      <div class="mx-20 sm:mx-64 mb-40">
         <h1 class="text-xl font-bold mb-5">Works</h1>
         - work in progress :)
       </div>
 
-      <div class="h-[1px] bg-gray-100 my-10 mx-20 md:mx-64"></div>
+      <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
 
-      <div class="mx-20 md:mx-64 mb-40">
+      <div class="mx-20 sm:mx-64 mb-40">
         <h1 class="text-xl font-bold mb-5">Blogs</h1>
         - work in progress :)
       </div>
 
-      <div class="h-[1px] bg-gray-100 my-10 mx-20 md:mx-64"></div> -->
+      <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div> -->
 
-      <div class="mx-20 md:mx-64 pb-40 mt-72">
+      <div class="mx-10 sm:mx-64 pb-40 mt-72">
         Reach me at
 
         <div class="mt-3">
@@ -100,7 +100,7 @@
     </Main>
     <div
       id="cursor-circle"
-      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-50 block"
+      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-50 hidden sm:block"
       :style="{ left: `${circle.pos.x}px`, top: `${circle.pos.y}px` }"
     ></div>
   </div>
