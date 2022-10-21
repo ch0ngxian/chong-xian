@@ -27,9 +27,9 @@
     </div>
 
     <div class="flex justify-end">
-      <div class="ml-10 cursor-pointer nav-item">Works</div>
-      <div class="ml-10 cursor-pointer nav-item">Blogs</div>
-      <div class="ml-10 cursor-pointer nav-item">Contacts</div>
+      <!-- <div class="ml-10 cursor-pointer nav-item">Works</div>
+      <div class="ml-10 cursor-pointer nav-item">Blogs</div> -->
+      <div class="ml-10 cursor-pointer nav-item invisible">Contacts</div>
     </div>
   </div>
 </template>

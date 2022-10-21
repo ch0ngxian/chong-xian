@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white h-screen" @mousemove="onMouseMove">
+  <div class="bg-white" @mousemove="onMouseMove">
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +10,7 @@
     </head>
     <Main>
       <div class="h-[1px] bg-gray-100 mx-20 md:mx-64"></div>
-      <div class="mx-20 md:mx-64 mt-20">
+      <div class="mx-20 md:mx-64 mt-20 mb-40">
         Hello, I am Chong Xian.
         <br />
         <div class="flex">
@@ -28,6 +28,73 @@
             {{ role.name }}
             <div class="h-[2px] bg-black"></div>
           </div>
+        </div>
+      </div>
+      <!-- <div class="h-[1px] bg-gray-100 my-10 mx-20 md:mx-64"></div>
+
+      <div class="mx-20 md:mx-64 mb-40">
+        <h1 class="text-xl font-bold mb-5">Works</h1>
+        - work in progress :)
+      </div>
+
+      <div class="h-[1px] bg-gray-100 my-10 mx-20 md:mx-64"></div>
+
+      <div class="mx-20 md:mx-64 mb-40">
+        <h1 class="text-xl font-bold mb-5">Blogs</h1>
+        - work in progress :)
+      </div>
+
+      <div class="h-[1px] bg-gray-100 my-10 mx-20 md:mx-64"></div> -->
+
+      <div class="mx-20 md:mx-64 pb-40 mt-72">
+        Reach me at
+
+        <div class="mt-3">
+          <a
+            href="mailto:chongxian.goh@gmail.com"
+            class="flex items-center underline my-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7 mr-2"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <polyline points="3 7 12 13 21 7" />
+            </svg>
+            <span>chongxian.goh@gmail.com</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/chongxian/"
+            target="_blank"
+            class="flex items-center underline my-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7 mr-2"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <rect x="4" y="4" width="16" height="16" rx="2" />
+              <line x1="8" y1="11" x2="8" y2="16" />
+              <line x1="8" y1="8" x2="8" y2="8.01" />
+              <line x1="12" y1="16" x2="12" y2="11" />
+              <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+            </svg>
+            <span>Chong Xian Goh</span>
+          </a>
         </div>
       </div>
     </Main>
