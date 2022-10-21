@@ -1,7 +1,12 @@
 <template>
-  <div class="flex justify-between py-5 mx-64 my-5">
+  <div class="flex justify-between py-5 mx-20 md:mx-64 my-5">
     <div class="cursor-pointer">
-      <svg height="100%" viewBox="0 0 584 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        height="100%"
+        viewBox="0 0 584 102"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g clip-path="url(#clip0_17_2)">
           <path d="M66 0H0V79H66V0Z" fill="black" stroke="black" />
           <path d="M81 78V1L130 78H81Z" fill="black" stroke="black" />
@@ -24,7 +29,7 @@
     <div class="flex justify-end">
       <div class="ml-10 cursor-pointer nav-item">Works</div>
       <div class="ml-10 cursor-pointer nav-item">Blogs</div>
-      <div class="ml-10 cursor-pointer nav-item ">Contacts</div>
+      <div class="ml-10 cursor-pointer nav-item">Contacts</div>
     </div>
   </div>
 </template>
@@ -35,7 +40,7 @@ export default {
 }
 </script>
 
-<style scoped >
+<style scoped>
 .nav-item:after {
   display: block;
   content: '';
