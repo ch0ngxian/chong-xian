@@ -2,6 +2,7 @@
   <div class="flex justify-between py-5 mx-10 sm:mx-64 my-5">
     <div class="cursor-pointer">
       <svg
+        ref="logo"
         height="100%"
         viewBox="0 0 584 102"
         fill="none"

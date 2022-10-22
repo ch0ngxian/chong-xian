@@ -8,29 +8,31 @@
         rel="stylesheet"
       />
     </head>
-    <Main>
-      <div class="h-[1px] bg-gray-200 sm:mx-64"></div>
-      <div class="mx-10 sm:mx-64 mt-20 mb-40">
-        Hello, I am Chong Xian.
-        <br />
-        <div class="flex">
-          <div>I am a&nbsp;</div>
 
-          <div
-            v-for="(role, index) in roles"
-            :key="index"
-            class="role inline"
-            :class="{
-              active: role.is_active,
-              hidden: role.is_hidden,
-            }"
-          >
-            {{ role.name }}
-            <div class="h-[2px] bg-black"></div>
-          </div>
+    <Header ref="header"></Header>
+
+    <div class="h-[1px] bg-gray-200 sm:mx-64"></div>
+    <div class="mx-10 sm:mx-64 mt-20 mb-40">
+      Hello, I am Chong Xian.
+      <br />
+      <div class="flex">
+        <div>I am a&nbsp;</div>
+
+        <div
+          v-for="(role, index) in roles"
+          :key="index"
+          class="role inline"
+          :class="{
+            active: role.is_active,
+            hidden: role.is_hidden,
+          }"
+        >
+          {{ role.name }}
+          <div class="h-[2px] bg-black"></div>
         </div>
       </div>
-      <!-- <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
+    </div>
+    <!-- <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
 
       <div class="mx-20 sm:mx-64 mb-40">
         <h1 class="text-xl font-bold mb-5">Works</h1>
@@ -46,70 +48,71 @@
 
       <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div> -->
 
-      <div class="mx-10 sm:mx-64 pb-40 mt-72">
-        Reach me at
+    <div class="mx-10 sm:mx-64 pb-40 mt-72">
+      Reach me at
 
-        <div class="mt-3">
-          <a
-            href="mailto:chongxian.goh@gmail.com"
-            class="flex items-center underline my-1"
+      <div class="mt-3">
+        <a
+          href="mailto:chongxian.goh@gmail.com"
+          class="flex items-center underline my-1"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 mr-2"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000000"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 mr-2"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#000000"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <polyline points="3 7 12 13 21 7" />
-            </svg>
-            <span>chongxian.goh@gmail.com</span>
-          </a>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <polyline points="3 7 12 13 21 7" />
+          </svg>
+          <span>chongxian.goh@gmail.com</span>
+        </a>
 
-          <a
-            href="https://www.linkedin.com/in/chongxian/"
-            target="_blank"
-            class="flex items-center underline my-1"
+        <a
+          href="https://www.linkedin.com/in/chongxian/"
+          target="_blank"
+          class="flex items-center underline my-1"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 mr-2"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000000"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7 mr-2"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#000000"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <rect x="4" y="4" width="16" height="16" rx="2" />
-              <line x1="8" y1="11" x2="8" y2="16" />
-              <line x1="8" y1="8" x2="8" y2="8.01" />
-              <line x1="12" y1="16" x2="12" y2="11" />
-              <path d="M16 16v-3a2 2 0 0 0 -4 0" />
-            </svg>
-            <span>Chong Xian Goh</span>
-          </a>
-        </div>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+          <span>Chong Xian Goh</span>
+        </a>
       </div>
-    </Main>
+    </div>
     <div
       id="cursor-circle"
-      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-50 hidden sm:block"
+      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-50 block"
+      :class="{ invisible: circle.is_invisible }"
       :style="{ left: `${circle.pos.x}px`, top: `${circle.pos.y}px` }"
     ></div>
   </div>
 </template>
 
 <script>
-import Main from '~/layouts/Main.vue'
+import Header from '~/layouts/components/Header.vue'
+
 export default {
-  components: { Main },
+  components: { Header },
 
   data() {
     return {
@@ -137,6 +140,7 @@ export default {
         },
       ],
       circle: {
+        is_invisible: true,
         pos: {
           x: 0,
           y: 0,
@@ -150,8 +154,9 @@ export default {
       },
     }
   },
-  created() {
-    this.initCircleFollowMouse()
+  created() {},
+  mounted() {
+    this.initCircleCursor()
     this.initRolesFadeEffect()
   },
   methods: {
@@ -161,14 +166,6 @@ export default {
     onMouseMove(e) {
       this.mouse.pos.x = e.pageX - 20
       this.mouse.pos.y = e.pageY - 20
-    },
-    initCircleFollowMouse() {
-      const _this = this
-
-      setInterval(() => {
-        _this.circle.pos.x += (_this.mouse.pos.x - _this.circle.pos.x) / 6
-        _this.circle.pos.y += (_this.mouse.pos.y - _this.circle.pos.y) / 6
-      }, 10)
     },
 
     initRolesFadeEffect() {
@@ -198,6 +195,21 @@ export default {
           return role
         })
       }, 4000)
+    },
+    initCircleCursor() {
+      const logoPos = this.$refs.header.$refs.logo.getBoundingClientRect()
+
+      this.mouse.pos.x = logoPos.left + 5
+      this.mouse.pos.y = logoPos.top + 4
+
+      this.circle.is_invisible = false
+
+      const _this = this
+
+      setInterval(() => {
+        _this.circle.pos.x += (_this.mouse.pos.x - _this.circle.pos.x) / 6
+        _this.circle.pos.y += (_this.mouse.pos.y - _this.circle.pos.y) / 6
+      }, 10)
     },
   },
 }
