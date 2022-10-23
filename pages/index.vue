@@ -281,8 +281,8 @@ export default {
 }
 
 .iframe-wrapper {
-  height: 30rem;
-  width: 20rem;
+  height: 26rem;
+  width: 16rem;
 }
 
 @media (min-width: 640px) {
