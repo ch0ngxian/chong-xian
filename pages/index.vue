@@ -51,7 +51,7 @@
               </div>
               <div class="iframe-wrapper relative">
                 <iframe
-                  class="pointer-events-none"
+                  class="pointer-events-none rounded-b-lg"
                   style="transform-origin: 0 0; transform: scale(0.7)"
                   width="143%"
                   height="143%"
@@ -60,7 +60,7 @@
                 >
                 </iframe>
                 <div
-                  class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5"
+                  class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5 rounded-b-lg"
                 >
                   <img
                     class="h-10 w-10 border border-white rounded mb-3"
