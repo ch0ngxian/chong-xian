@@ -11,9 +11,10 @@
 
     <Header ref="header"></Header>
 
-    <div class="h-[1px] bg-gray-200 sm:mx-64"></div>
-    <div class="mx-10 sm:mx-64 mt-20 mb-40">
-      Hello, I am Chong Xian.
+    <Divider />
+
+    <div class="mx-8 sm:mx-64 mt-20" style="height: 70vh">
+      <span>Hello, I am Chong Xian.</span>
       <br />
       <div class="flex">
         <div>I am a&nbsp;</div>
@@ -32,23 +33,64 @@
         </div>
       </div>
     </div>
-    <!-- <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
 
-      <div class="mx-20 sm:mx-64 mb-40">
-        <h1 class="text-xl font-bold mb-5">Works</h1>
-        - work in progress :)
+    <Divider id="works" />
+
+    <div class="mx-8 sm:mx-64 mb-40" style="height: 80vh">
+      <h1 class="text-xl font-bold mb-2">Works</h1>
+      <div class="mb-5">I built these apps</div>
+
+      <div class="flex">
+        <div class="hover:scale-105 transition ease-in-out">
+          <a class="flex" href="https://www.jsoner.app/" target="_blank">
+            <div class="overflow-hidden rounded-lg border border-gray-200">
+              <div class="h-7 w-full bg-white flex items-center">
+                <div class="rounded-full h-2.5 w-2.5 bg-[#FF5F57] ml-3"></div>
+                <div class="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
+                <div class="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
+              </div>
+              <div class="iframe-wrapper relative">
+                <iframe
+                  class="pointer-events-none"
+                  style="transform-origin: 0 0; transform: scale(0.7)"
+                  width="143%"
+                  height="143%"
+                  scrolling="no"
+                  src="https://www.jsoner.app/"
+                >
+                </iframe>
+                <div
+                  class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5"
+                >
+                  <img
+                    class="h-10 w-10 border border-white rounded mb-3"
+                    src="https://www.jsoner.app/favicon.ico"
+                  />
+                  <div class="text-lg font-medium mb-2">
+                    JSONer | A minimalist JSON beautifier
+                  </div>
+                  <div class="text-xs font-light text-gray-400">
+                    JSONer helps to format the input JSON and beautify it to
+                    display in a more readable way.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-
-      <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
+    </div>
+    <!--
+      <Divider />
 
       <div class="mx-20 sm:mx-64 mb-40">
         <h1 class="text-xl font-bold mb-5">Blogs</h1>
         - work in progress :)
       </div>
+ -->
+    <Divider id="contacts" />
 
-      <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div> -->
-
-    <div class="mx-10 sm:mx-64 pb-40 mt-72">
+    <div class="mx-8 sm:mx-64 pb-40">
       Reach me at
 
       <div class="mt-3">
@@ -109,10 +151,11 @@
 </template>
 
 <script>
+import Divider from '../layouts/components/Divider.vue'
 import Header from '~/layouts/components/Header.vue'
 
 export default {
-  components: { Header },
+  components: { Header, Divider },
 
   data() {
     return {
@@ -237,8 +280,15 @@ export default {
   transform: scaleX(0);
 }
 
-.circle-invert {
-  filter: invert(1);
-  mix-blend-mode: difference;
+.iframe-wrapper {
+  height: 30rem;
+  width: 20rem;
+}
+
+@media (min-width: 640px) {
+  .iframe-wrapper {
+    height: 32rem;
+    width: 26rem;
+  }
 }
 </style>
