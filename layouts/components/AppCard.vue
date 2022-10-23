@@ -96,7 +96,8 @@
   transition: opacity 1s ease-in-out;
 }
 
-.glow:hover::after {
+.glow:hover::after,
+.glow:focus::after {
   opacity: 1;
 }
 
