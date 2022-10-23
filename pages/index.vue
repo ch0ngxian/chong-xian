@@ -41,43 +41,7 @@
       <div class="mb-5">I built these apps</div>
 
       <div class="flex">
-        <div class="hover:scale-105 transition ease-in-out">
-          <a class="flex" href="https://www.jsoner.app/" target="_blank">
-            <div class="overflow-hidden rounded-lg border border-gray-200">
-              <div class="h-7 w-full bg-white flex items-center">
-                <div class="rounded-full h-2.5 w-2.5 bg-[#FF5F57] ml-3"></div>
-                <div class="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
-                <div class="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
-              </div>
-              <div class="iframe-wrapper relative">
-                <iframe
-                  class="pointer-events-none rounded-b-lg"
-                  style="transform-origin: 0 0; transform: scale(0.7)"
-                  width="143%"
-                  height="143%"
-                  scrolling="no"
-                  src="https://www.jsoner.app/"
-                >
-                </iframe>
-                <div
-                  class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5 rounded-b-lg"
-                >
-                  <img
-                    class="h-10 w-10 border border-white rounded mb-3"
-                    src="https://www.jsoner.app/favicon.ico"
-                  />
-                  <div class="text-lg font-medium mb-2">
-                    JSONer | A minimalist JSON beautifier
-                  </div>
-                  <div class="text-xs font-light text-gray-400">
-                    JSONer helps to format the input JSON and beautify it to
-                    display in a more readable way.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <AppCard />
       </div>
     </div>
     <!--
@@ -152,10 +116,11 @@
 
 <script>
 import Divider from '../layouts/components/Divider.vue'
+import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
 
 export default {
-  components: { Header, Divider },
+  components: { Header, Divider, AppCard },
 
   data() {
     return {
@@ -278,17 +243,5 @@ export default {
 
 .role.active:after {
   transform: scaleX(0);
-}
-
-.iframe-wrapper {
-  height: 26rem;
-  width: 16rem;
-}
-
-@media (min-width: 640px) {
-  .iframe-wrapper {
-    height: 32rem;
-    width: 26rem;
-  }
 }
 </style>
