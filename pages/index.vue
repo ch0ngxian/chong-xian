@@ -172,12 +172,12 @@ export default {
           is_hidden: true,
         },
         {
-          name: 'product owner',
+          name: 'product manager',
           is_active: false,
           is_hidden: true,
         },
         {
-          name: 'ui ux expert',
+          name: 'ui ux euthanist',
           is_active: false,
           is_hidden: true,
         },
