@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Chong Xian Goh',
+    title: 'Chong Xian Goh - Multi-hyphenate Software Engineers',
     htmlAttrs: {
       lang: 'en',
     },
@@ -16,6 +16,34 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Full stack developers, product managers, ui ux designer. I believe learning knowledge from wide range of fields can create synergy that provide me the ability to solve problems better.',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Chong Xian Goh - Multi-hyphenate Software Engineers',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Full stack developers, product managers, ui ux designer. I believe learning knowledge from wide range of fields can create synergy that provide me the ability to solve problems better.',
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://www.chongxian.dev/',
+      },
     ],
     link: [
       {
