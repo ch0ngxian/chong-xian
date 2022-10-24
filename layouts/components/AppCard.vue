@@ -77,16 +77,6 @@
     #a0c4ff,
     #bdb2ff
   );
-  /* background-image: linear-gradient(
-    var(--rotate),
-    #264653,
-    #287271,
-    #2a9d8f,
-    #e9c46a,
-    #f4a261,
-    #ee8959,
-    #e76f51
-  ); */
   animation: spin 4s linear infinite, glow 5s linear infinite;
   transition: opacity 1s ease-in-out;
 }

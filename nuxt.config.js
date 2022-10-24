@@ -44,6 +44,13 @@ export default {
         property: 'og:url',
         content: 'https://www.chongxian.dev/',
       },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'share.png',
+      },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '627' },
     ],
     link: [
       {
