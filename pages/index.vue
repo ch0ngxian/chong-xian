@@ -32,6 +32,9 @@
           <div class="h-[2px] bg-black"></div>
         </div>
       </div>
+      <div class="flex justify-end invisible">
+        <canvas ref="sphere_canva"></canvas>
+      </div>
     </div>
 
     <Divider id="works" />
@@ -115,6 +118,15 @@
 </template>
 
 <script>
+import {
+  Color,
+  Mesh,
+  MeshBasicMaterial,
+  PerspectiveCamera,
+  Scene,
+  SphereGeometry,
+  WebGLRenderer,
+} from 'three'
 import Divider from '../layouts/components/Divider.vue'
 import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
@@ -166,6 +178,29 @@ export default {
   mounted() {
     this.initCircleCursor()
     this.initRolesFadeEffect()
+
+    const scene = new Scene()
+
+    const geometry = new SphereGeometry(100, 100, 100)
+    const material = new MeshBasicMaterial()
+    const sphere = new Mesh(geometry, material)
+
+    scene.add(sphere)
+    scene.background = new Color('gray')
+
+    const renderer = new WebGLRenderer({
+      canvas: this.$refs.sphere_canva,
+      antialias: true,
+    })
+
+    const camera = new PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    )
+    camera.position.set(1.5, -0.5, 6)
+    renderer.render(scene, camera)
   },
   methods: {
     timeout(ms) {
