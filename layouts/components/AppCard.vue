@@ -53,16 +53,11 @@
   }
 }
 
-@property --rotate {
-  syntax: '<angle>';
-  initial-value: 132deg;
-  inherits: false;
-}
-
 .glow {
   z-index: 1;
 }
 .glow::after {
+  --rotate: 132deg;
   position: absolute;
   content: '';
   top: 0;
