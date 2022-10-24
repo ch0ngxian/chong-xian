@@ -47,7 +47,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'share.png',
+        content: 'share.jpg',
       },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '627' },
