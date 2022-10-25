@@ -38,8 +38,6 @@
   </div>
 </template>
 
-<script></script>
-
 <style scoped>
 .iframe-wrapper {
   height: 26rem;
@@ -53,11 +51,16 @@
   }
 }
 
+@property --rotate {
+  syntax: '<angle>';
+  initial-value: 132deg;
+  inherits: false;
+}
+
 .glow {
   z-index: 1;
 }
 .glow::after {
-  --rotate: 132deg;
   position: absolute;
   content: '';
   top: 0;
@@ -68,7 +71,7 @@
   opacity: 0;
   filter: blur(3rem);
   background-image: linear-gradient(
-    var(--rotate),
+    var(--rotate, 132deg),
     #ffadad,
     #ffd6a5,
     #fdffb6,
@@ -77,7 +80,7 @@
     #a0c4ff,
     #bdb2ff
   );
-  animation: spin 4s linear infinite, glow 5s linear infinite;
+  animation: spin 8s linear infinite, glow 5s linear infinite;
   transition: opacity 1s ease-in-out;
 }
 
