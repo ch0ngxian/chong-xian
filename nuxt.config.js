@@ -19,7 +19,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Full stack developers, product managers, ui ux designer. I believe learning knowledge from wide range of fields can create synergy that provide me the ability to solve problems better.',
+          'Hi, I am Chong Xian. Full stack developers, product managers, certified scrum master, ui ux enthusiast.',
       },
       {
         hid: 'og:title',
@@ -30,7 +30,7 @@ export default {
         hid: 'og:description',
         property: 'og:description',
         content:
-          'Full stack developers, product managers, ui ux designer. I believe learning knowledge from wide range of fields can create synergy that provide me the ability to solve problems better.',
+        'Hi, I am Chong Xian. Full stack developers, product managers, certified scrum master, ui ux enthusiast.',
       },
       {
         hid: 'og:type',

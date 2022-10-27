@@ -154,7 +154,7 @@ export default {
           is_hidden: true,
         },
         {
-          name: 'ui ux euthanist',
+          name: 'ui ux enthusiast',
           is_active: false,
           is_hidden: true,
         },
