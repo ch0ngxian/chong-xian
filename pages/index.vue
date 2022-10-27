@@ -42,9 +42,9 @@
 
     <div class="mb-40" style="height: 80vh">
       <h1 class="mx-8 sm:mx-64 text-xl font-bold mb-2">Works</h1>
-      <div class="mx-8 sm:mx-64 mb-5">I built these apps</div>
+      <div class="mx-8 sm:mx-64">I built these apps</div>
 
-      <div class="flex w-2/3 overflow-x-scroll mx-8 sm:mx-64 pb-7">
+      <div class="flex px-8 sm:px-64 py-7">
         <AppCard
           title="JSONer | A minimalist JSON beautifier"
           description="JSONer helps to format the input JSON and beautify it to display in a more readable way."
