@@ -190,8 +190,9 @@ export default {
   },
   created() {},
   mounted() {
-    // this.initCircleCursor()
-    // this.initRolesFadeEffect()
+    this.initCircleCursor()
+    this.initRolesFadeEffect()
+
     // const scene = new Scene()
     // scene.background = new Color('transparent')
     // const geometry = new SphereGeometry(1, 64, 64)
