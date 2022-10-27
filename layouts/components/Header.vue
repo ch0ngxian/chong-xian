@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between py-5 mx-10 sm:mx-64 my-5">
+  <div class="flex justify-between pt-5 mt-5 mx-10 sm:mx-64">
     <div class="cursor-pointer">
       <svg
         ref="logo"

@@ -32,6 +32,9 @@
           <div class="h-[2px] bg-black"></div>
         </div>
       </div>
+      <div class="flex justify-end invisible">
+        <canvas ref="sphere_canva"></canvas>
+      </div>
     </div>
 
     <Divider id="works" />
@@ -41,43 +44,7 @@
       <div class="mb-5">I built these apps</div>
 
       <div class="flex">
-        <div class="hover:scale-105 transition ease-in-out">
-          <a class="flex" href="https://www.jsoner.app/" target="_blank">
-            <div class="overflow-hidden rounded-lg border border-gray-200">
-              <div class="h-7 w-full bg-white flex items-center">
-                <div class="rounded-full h-2.5 w-2.5 bg-[#FF5F57] ml-3"></div>
-                <div class="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
-                <div class="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
-              </div>
-              <div class="iframe-wrapper relative">
-                <iframe
-                  class="pointer-events-none"
-                  style="transform-origin: 0 0; transform: scale(0.7)"
-                  width="143%"
-                  height="143%"
-                  scrolling="no"
-                  src="https://www.jsoner.app/"
-                >
-                </iframe>
-                <div
-                  class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5"
-                >
-                  <img
-                    class="h-10 w-10 border border-white rounded mb-3"
-                    src="https://www.jsoner.app/favicon.ico"
-                  />
-                  <div class="text-lg font-medium mb-2">
-                    JSONer | A minimalist JSON beautifier
-                  </div>
-                  <div class="text-xs font-light text-gray-400">
-                    JSONer helps to format the input JSON and beautify it to
-                    display in a more readable way.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <AppCard />
       </div>
     </div>
     <!--
@@ -151,11 +118,21 @@
 </template>
 
 <script>
+import {
+  Color,
+  Mesh,
+  MeshBasicMaterial,
+  PerspectiveCamera,
+  Scene,
+  SphereGeometry,
+  WebGLRenderer,
+} from 'three'
 import Divider from '../layouts/components/Divider.vue'
+import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
 
 export default {
-  components: { Header, Divider },
+  components: { Header, Divider, AppCard },
 
   data() {
     return {
@@ -172,12 +149,12 @@ export default {
           is_hidden: true,
         },
         {
-          name: 'product owner',
+          name: 'product manager',
           is_active: false,
           is_hidden: true,
         },
         {
-          name: 'ui ux expert',
+          name: 'ui ux enthusiast',
           is_active: false,
           is_hidden: true,
         },
@@ -201,6 +178,29 @@ export default {
   mounted() {
     this.initCircleCursor()
     this.initRolesFadeEffect()
+
+    const scene = new Scene()
+
+    const geometry = new SphereGeometry(100, 100, 100)
+    const material = new MeshBasicMaterial()
+    const sphere = new Mesh(geometry, material)
+
+    scene.add(sphere)
+    scene.background = new Color('gray')
+
+    const renderer = new WebGLRenderer({
+      canvas: this.$refs.sphere_canva,
+      antialias: true,
+    })
+
+    const camera = new PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    )
+    camera.position.set(1.5, -0.5, 6)
+    renderer.render(scene, camera)
   },
   methods: {
     timeout(ms) {
@@ -278,17 +278,5 @@ export default {
 
 .role.active:after {
   transform: scaleX(0);
-}
-
-.iframe-wrapper {
-  height: 30rem;
-  width: 20rem;
-}
-
-@media (min-width: 640px) {
-  .iframe-wrapper {
-    height: 32rem;
-    width: 26rem;
-  }
 }
 </style>
