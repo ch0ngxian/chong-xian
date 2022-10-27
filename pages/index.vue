@@ -11,9 +11,10 @@
 
     <Header ref="header"></Header>
 
-    <div class="h-[1px] bg-gray-200 sm:mx-64"></div>
-    <div class="mx-10 sm:mx-64 mt-20 mb-40">
-      Hello, I am Chong Xian.
+    <Divider />
+
+    <div class="mx-8 sm:mx-64 mt-20" style="height: 70vh">
+      <span>Hello, I am Chong Xian.</span>
       <br />
       <div class="flex">
         <div>I am a&nbsp;</div>
@@ -31,24 +32,32 @@
           <div class="h-[2px] bg-black"></div>
         </div>
       </div>
-    </div>
-    <!-- <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
-
-      <div class="mx-20 sm:mx-64 mb-40">
-        <h1 class="text-xl font-bold mb-5">Works</h1>
-        - work in progress :)
+      <div class="flex justify-end invisible">
+        <canvas ref="sphere_canva"></canvas>
       </div>
+    </div>
 
-      <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div>
+    <Divider id="works" />
+
+    <div class="mx-8 sm:mx-64 mb-40" style="height: 80vh">
+      <h1 class="text-xl font-bold mb-2">Works</h1>
+      <div class="mb-5">I built these apps</div>
+
+      <div class="flex">
+        <AppCard />
+      </div>
+    </div>
+    <!--
+      <Divider />
 
       <div class="mx-20 sm:mx-64 mb-40">
         <h1 class="text-xl font-bold mb-5">Blogs</h1>
         - work in progress :)
       </div>
+ -->
+    <Divider id="contacts" />
 
-      <div class="h-[1px] bg-gray-200 my-10 mx-20 sm:mx-64"></div> -->
-
-    <div class="mx-10 sm:mx-64 pb-40 mt-72">
+    <div class="mx-8 sm:mx-64 pb-40">
       Reach me at
 
       <div class="mt-3">
@@ -109,10 +118,21 @@
 </template>
 
 <script>
+import {
+  Color,
+  Mesh,
+  MeshBasicMaterial,
+  PerspectiveCamera,
+  Scene,
+  SphereGeometry,
+  WebGLRenderer,
+} from 'three'
+import Divider from '../layouts/components/Divider.vue'
+import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
 
 export default {
-  components: { Header },
+  components: { Header, Divider, AppCard },
 
   data() {
     return {
@@ -129,12 +149,12 @@ export default {
           is_hidden: true,
         },
         {
-          name: 'product owner',
+          name: 'product manager',
           is_active: false,
           is_hidden: true,
         },
         {
-          name: 'ui ux expert',
+          name: 'ui ux enthusiast',
           is_active: false,
           is_hidden: true,
         },
@@ -158,6 +178,29 @@ export default {
   mounted() {
     this.initCircleCursor()
     this.initRolesFadeEffect()
+
+    const scene = new Scene()
+
+    const geometry = new SphereGeometry(100, 100, 100)
+    const material = new MeshBasicMaterial()
+    const sphere = new Mesh(geometry, material)
+
+    scene.add(sphere)
+    scene.background = new Color('gray')
+
+    const renderer = new WebGLRenderer({
+      canvas: this.$refs.sphere_canva,
+      antialias: true,
+    })
+
+    const camera = new PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    )
+    camera.position.set(1.5, -0.5, 6)
+    renderer.render(scene, camera)
   },
   methods: {
     timeout(ms) {
@@ -235,10 +278,5 @@ export default {
 
 .role.active:after {
   transform: scaleX(0);
-}
-
-.circle-invert {
-  filter: invert(1);
-  mix-blend-mode: difference;
 }
 </style>

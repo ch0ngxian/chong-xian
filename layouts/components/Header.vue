@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between py-5 mx-10 sm:mx-64 my-5">
+  <div class="flex justify-between pt-5 mt-5 mx-10 sm:mx-64">
     <div class="cursor-pointer">
       <svg
         ref="logo"
@@ -27,10 +27,10 @@
       </svg>
     </div>
 
-    <div class="flex justify-end">
-      <!-- <div class="ml-10 cursor-pointer nav-item">Works</div>
-      <div class="ml-10 cursor-pointer nav-item">Blogs</div> -->
-      <div class="ml-10 cursor-pointer nav-item invisible">Contacts</div>
+    <div class="invisible sm:visible flex justify-end">
+      <a class="ml-10 cursor-pointer nav-item" href="#works">Works</a>
+      <a class="ml-10 cursor-pointer nav-item hidden" href="#blogs">Blogs</a>
+      <a class="ml-10 cursor-pointer nav-item" href="#contacts">Contacts</a>
     </div>
   </div>
 </template>
