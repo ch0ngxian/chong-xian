@@ -44,7 +44,9 @@
       <h1 class="mx-8 sm:mx-64 text-xl font-bold mb-2">Works</h1>
       <div class="mx-8 sm:mx-64">I built these apps</div>
 
-      <div class="flex px-8 sm:px-64 py-7">
+      <div
+        class="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-8 sm:px-64 py-24 -mt-16"
+      >
         <AppCard
           title="JSONer | A minimalist JSON beautifier"
           description="JSONer helps to format the input JSON and beautify it to display in a more readable way."

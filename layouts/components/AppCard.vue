@@ -1,5 +1,5 @@
 <template>
-  <div class="hover:scale-105 transition ease-in-out relative glow mr-7">
+  <div class="hover:scale-105 transition ease-in-out relative glow mr-8">
     <a class="flex" :href="url" target="_blank">
       <div class="overflow-hidden rounded-lg border border-gray-200">
         <div class="h-7 w-full bg-white flex items-center border-b">
