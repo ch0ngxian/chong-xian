@@ -44,19 +44,19 @@
       <h1 class="mx-8 sm:mx-64 text-xl font-bold mb-2">Works</h1>
       <div class="mx-8 sm:mx-64 mb-5">I built these apps</div>
 
-      <div class="flex">
+      <div class="flex w-2/3 overflow-x-scroll mx-8 sm:mx-64 pb-7">
         <AppCard
           title="JSONer | A minimalist JSON beautifier"
           description="JSONer helps to format the input JSON and beautify it to display in a more readable way."
           url="https://www.jsoner.app/"
           icon-url="https://www.jsoner.app/favicon.ico"
         />
-        <!-- <AppCard
+        <AppCard
           title="Draw a Line | Easy line graph illustrating tool"
           description="Get elegant and highly customized line graph in a glance."
           url="https://draw-a-line.netlify.app/"
           icon-url="https://draw-a-line.netlify.app/logo.svg"
-        /> -->
+        />
       </div>
     </div>
     <!--
