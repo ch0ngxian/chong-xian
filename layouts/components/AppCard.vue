@@ -1,8 +1,8 @@
 <template>
-  <div class="hover:scale-105 transition ease-in-out relative glow">
-    <a class="flex" href="https://www.jsoner.app/" target="_blank">
+  <div class="hover:scale-105 transition ease-in-out relative glow mr-7">
+    <a class="flex" :href="url" target="_blank">
       <div class="overflow-hidden rounded-lg border border-gray-200">
-        <div class="h-7 w-full bg-white flex items-center">
+        <div class="h-7 w-full bg-white flex items-center border-b">
           <div class="rounded-full h-2.5 w-2.5 bg-[#FF5F57] ml-3"></div>
           <div class="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
           <div class="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
@@ -14,7 +14,7 @@
             width="143%"
             height="143%"
             scrolling="no"
-            src="https://www.jsoner.app/"
+            :src="url"
           >
           </iframe>
           <div
@@ -22,14 +22,13 @@
           >
             <img
               class="h-10 w-10 border border-white rounded mb-3"
-              src="https://www.jsoner.app/favicon.ico"
+              :src="iconUrl"
             />
             <div class="text-lg font-medium mb-2">
-              JSONer | A minimalist JSON beautifier
+              {{ title }}
             </div>
             <div class="text-xs font-light text-gray-400">
-              JSONer helps to format the input JSON and beautify it to display
-              in a more readable way.
+              {{ description }}
             </div>
           </div>
         </div>
@@ -37,6 +36,29 @@
     </a>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    iconUrl: {
+      type: String,
+      required: true,
+    },
+    url: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style scoped>
 .iframe-wrapper {

@@ -44,7 +44,18 @@
       <div class="mb-5">I built these apps</div>
 
       <div class="flex">
-        <AppCard />
+        <AppCard
+          title="JSONer | A minimalist JSON beautifier"
+          description="JSONer helps to format the input JSON and beautify it to display in a more readable way."
+          url="https://www.jsoner.app/"
+          icon-url="https://www.jsoner.app/favicon.ico"
+        />
+        <AppCard
+          title="Draw a Line | Easy line graph illustrating tool"
+          description="Get elegant and highly customized line graph in a glance."
+          url="https://draw-a-line.netlify.app/"
+          icon-url="https://draw-a-line.netlify.app/logo.svg"
+        />
       </div>
     </div>
     <!--
