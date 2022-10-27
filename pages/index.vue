@@ -13,6 +13,7 @@
 
     <Divider />
 
+    <!-- I am a horizontal person, because I belive learning knowledge from different field can create exponential synergy to -->
     <div class="mx-8 sm:mx-64 mt-20" style="height: 70vh">
       <span>Hello, I am Chong Xian.</span>
       <br />
@@ -32,16 +33,16 @@
           <div class="h-[2px] bg-black"></div>
         </div>
       </div>
-      <div class="flex justify-end invisible">
-        <canvas ref="sphere_canva"></canvas>
-      </div>
+      <!-- <div class="flex justify-end">
+        <canvas ref="sphere_canva" class="w-full"></canvas>
+      </div> -->
     </div>
 
     <Divider id="works" />
 
-    <div class="mx-8 sm:mx-64 mb-40" style="height: 80vh">
-      <h1 class="text-xl font-bold mb-2">Works</h1>
-      <div class="mb-5">I built these apps</div>
+    <div class="mb-40" style="height: 80vh">
+      <h1 class="mx-8 sm:mx-64 text-xl font-bold mb-2">Works</h1>
+      <div class="mx-8 sm:mx-64 mb-5">I built these apps</div>
 
       <div class="flex">
         <AppCard
@@ -50,12 +51,12 @@
           url="https://www.jsoner.app/"
           icon-url="https://www.jsoner.app/favicon.ico"
         />
-        <AppCard
+        <!-- <AppCard
           title="Draw a Line | Easy line graph illustrating tool"
           description="Get elegant and highly customized line graph in a glance."
           url="https://draw-a-line.netlify.app/"
           icon-url="https://draw-a-line.netlify.app/logo.svg"
-        />
+        /> -->
       </div>
     </div>
     <!--
@@ -129,15 +130,17 @@
 </template>
 
 <script>
-import {
-  Color,
-  Mesh,
-  MeshBasicMaterial,
-  PerspectiveCamera,
-  Scene,
-  SphereGeometry,
-  WebGLRenderer,
-} from 'three'
+// import {
+//   Color,
+//   Fog,
+//   Mesh,
+//   MeshBasicMaterial,
+//   PerspectiveCamera,
+//   PointLight,
+//   Scene,
+//   SphereGeometry,
+//   WebGLRenderer,
+// } from 'three'
 import Divider from '../layouts/components/Divider.vue'
 import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
@@ -187,31 +190,41 @@ export default {
   },
   created() {},
   mounted() {
-    this.initCircleCursor()
-    this.initRolesFadeEffect()
-
-    const scene = new Scene()
-
-    const geometry = new SphereGeometry(100, 100, 100)
-    const material = new MeshBasicMaterial()
-    const sphere = new Mesh(geometry, material)
-
-    scene.add(sphere)
-    scene.background = new Color('gray')
-
-    const renderer = new WebGLRenderer({
-      canvas: this.$refs.sphere_canva,
-      antialias: true,
-    })
-
-    const camera = new PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    )
-    camera.position.set(1.5, -0.5, 6)
-    renderer.render(scene, camera)
+    // this.initCircleCursor()
+    // this.initRolesFadeEffect()
+    // const scene = new Scene()
+    // scene.background = new Color('transparent')
+    // const geometry = new SphereGeometry(1, 64, 64)
+    // const material = new MeshBasicMaterial({
+    //   color: new Color('black'),
+    //   fog: true,
+    // })
+    // const sphere = new Mesh(geometry, material)
+    // scene.add(sphere)
+    // scene.fog = new Fog(0xffffff, 10, 100)
+    // const light = new PointLight(0xffffff)
+    // light.position.set(-1, 2, 4)
+    // scene.add(light)
+    // const renderer = new WebGLRenderer({
+    //   canvas: this.$refs.sphere_canva,
+    //   antialias: true,
+    //   alpha: true,
+    // })
+    // renderer.setPixelRatio(window.devicePixelRatio)
+    // const camera = new PerspectiveCamera(
+    //   75,
+    //   window.innerWidth / window.innerHeight,
+    //   0.1,
+    //   1000
+    // )
+    // camera.position.set(0, 0, 5)
+    // function animate() {
+    //   requestAnimationFrame(animate)
+    //   sphere.rotation.x += 0.01
+    //   sphere.rotation.y += 0.01
+    //   renderer.render(scene, camera)
+    // }
+    // animate()
   },
   methods: {
     timeout(ms) {
