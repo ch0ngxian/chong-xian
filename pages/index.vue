@@ -45,7 +45,7 @@
       <div class="mx-8 sm:mx-64">I built these apps</div>
 
       <div
-        class="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-8 sm:px-64 py-24 -mt-16"
+        class="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-8 sm:px-64 py-36 -mt-28"
       >
         <AppCard
           title="JSONer | A minimalist JSON beautifier"
