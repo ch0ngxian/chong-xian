@@ -14,8 +14,8 @@
     <Divider />
 
     <!-- I am a horizontal person, because I belive learning knowledge from different field can create exponential synergy to -->
-    <div class="mx-8 sm:mx-64 mt-20" style="height: 20vh">
-      <span>Hello, I am Chong Xian.</span>
+    <div class="mx-8 sm:mx-64 mt-20" style="height: 70vh">
+      <span>Hi 👋 I am Chong Xian.</span>
       <br />
       <div class="flex">
         <div>I am a&nbsp;</div>
@@ -29,13 +29,21 @@
             hidden: role.is_hidden,
           }"
         >
-          {{ role.name }}
+          {{ role.name }}.
           <div class="h-[2px] bg-black"></div>
         </div>
       </div>
+
+      <div class="w-3/4 mt-6">
+        Currently crafting awesome product at
+        <a href="https://www.easystore.co/" target="_blank" class="underline"
+          >EasyStore</a
+        >. <br />
+        I solve problem with user-first product and build them with heart.
+      </div>
     </div>
     <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
-    <div
+    <!-- <div
       class="canva flex justify-end box-border items-end w-screen overflow-hidden p-20 sm:px-64 sm:pb-20"
     >
       <div
@@ -47,7 +55,7 @@
         <div class="orbit"></div>
         <div class="orbit"></div>
       </div>
-    </div>
+    </div> -->
 
     <Divider id="works" />
 
@@ -76,12 +84,13 @@
     <Divider id="contacts" />
 
     <div class="mx-8 sm:mx-64 pb-40">
-      Reach me at
+      <h1 class="text-xl font-bold mb-2">Contacts</h1>
+      <div class="">Let's say hi</div>
 
-      <div class="mt-3">
+      <div class="mt-3 -ml-3">
         <a
           href="mailto:chongxian.goh@gmail.com"
-          class="flex items-center underline my-1"
+          class="flex items-center underline hover:bg-gray-100 sm:w-96 p-3 rounded-lg transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +112,7 @@
         <a
           href="https://www.linkedin.com/in/chongxian/"
           target="_blank"
-          class="flex items-center underline my-1"
+          class="flex items-center underline hover:bg-gray-100 sm:w-96 p-3 rounded-lg transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

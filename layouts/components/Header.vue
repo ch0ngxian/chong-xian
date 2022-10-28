@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between pt-5 mt-5 mx-10 sm:mx-64">
-    <div class="cursor-pointer">
+    <a class="cursor-pointer" href="/">
       <svg
         ref="logo"
         height="100%"
@@ -25,7 +25,7 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </a>
 
     <div class="invisible sm:visible flex justify-end">
       <a class="ml-10 cursor-pointer nav-item" href="#works">Works</a>
