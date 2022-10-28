@@ -272,6 +272,9 @@ export default {
       this.mouse.pos.x = logoPos.left + 5
       this.mouse.pos.y = logoPos.top + 4
 
+      this.circle.pos.x = this.mouse.pos.x
+      this.circle.pos.y = this.mouse.pos.y
+
       this.circle.is_invisible = false
 
       const _this = this
