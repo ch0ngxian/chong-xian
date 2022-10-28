@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="w-3/4 mt-6">
+      <div class="mt-6">
         Currently crafting awesome product at
         <a href="https://www.easystore.co/" target="_blank" class="underline"
           >EasyStore</a
