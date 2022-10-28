@@ -61,14 +61,7 @@
         />
       </div>
     </div>
-    <!--
-      <Divider />
 
-      <div class="mx-20 sm:mx-64 mb-40">
-        <h1 class="text-xl font-bold mb-5">Blogs</h1>
-        - work in progress :)
-      </div>
- -->
     <Divider id="contacts" />
 
     <div class="mx-8 sm:mx-64 pb-40">
