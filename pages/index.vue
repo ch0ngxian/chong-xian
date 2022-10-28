@@ -14,7 +14,7 @@
     <Divider />
 
     <!-- I am a horizontal person, because I belive learning knowledge from different field can create exponential synergy to -->
-    <div class="mx-8 sm:mx-64 mt-20" style="height: 70vh">
+    <div class="mx-8 sm:mx-64 mt-20" style="height: 20vh">
       <span>Hello, I am Chong Xian.</span>
       <br />
       <div class="flex">
@@ -33,9 +33,20 @@
           <div class="h-[2px] bg-black"></div>
         </div>
       </div>
-      <!-- <div class="flex justify-end">
-        <canvas ref="sphere_canva" class="w-full"></canvas>
-      </div> -->
+    </div>
+    <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
+    <div
+      class="canva flex justify-end box-border items-end w-screen overflow-hidden p-20 sm:px-64 sm:pb-20"
+    >
+      <div
+        class="core rounded-full bg-black h-56 w-56 translate-x-24 sm:-translate-x-0"
+      >
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+      </div>
     </div>
 
     <Divider id="works" />
@@ -301,5 +312,70 @@ export default {
 
 .role.active:after {
   transform: scaleX(0);
+}
+
+.canva .core {
+  transform-style: preserve-3d;
+  animation: stand infinite linear;
+}
+
+.canva .orbit:nth-child(1) {
+  @apply absolute border-8 bg-transparent rounded-full z-50;
+  top: -10rem;
+  left: -10rem;
+  width: 250%;
+  height: 250%;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(20deg);
+}
+/*
+.canva .orbit:nth-child(2) {
+  @apply absolute border-8 bg-transparent rounded-full z-50;
+  top: -7rem;
+  left: -6rem;
+  width: 150%;
+  height: 150%;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(-20deg);
+} */
+
+.canva .orbit:nth-child(3) {
+  @apply absolute border-8 bg-transparent rounded-full z-50;
+  top: -7rem;
+  left: -8rem;
+  width: 200%;
+  height: 200%;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(-20deg);
+}
+
+/* .canva .orbit:nth-child(4) {
+  @apply absolute border-8 bg-transparent rounded-full z-50;
+  top: 1rem;
+  left: -2rem;
+  width: 150%;
+  height: 150%;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(-20deg);
+} */
+
+/* .canva .orbit:nth-child(5) {
+  @apply absolute border-8 bg-transparent rounded-full z-50;
+  top: -7rem;
+  left: -4rem;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(-20deg);
+} */
+
+@keyframes stand {
+  0% {
+    transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
 }
 </style>
