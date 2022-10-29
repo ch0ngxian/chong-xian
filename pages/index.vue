@@ -35,11 +35,11 @@
       </div>
 
       <div class="mt-6">
-        Currently crafting awesome product at
+        Currently crafting awesome products at
         <a href="https://www.easystore.co/" target="_blank" class="underline"
           >EasyStore</a
         >. <br />
-        I solve problem with user-first product and build them with heart.
+        I solve problems with user-first products, design and build them with easy-to-use experience ❤️.
       </div>
     </div>
     <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
