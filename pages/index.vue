@@ -14,7 +14,7 @@
     <Divider />
 
     <!-- I am a horizontal person, because I belive learning knowledge from different field can create exponential synergy to -->
-    <div class="mx-8 sm:mx-64 mt-20" style="height: 70vh">
+    <div class="mx-8 sm:mx-64 mt-20" style="height: 20vh">
       <span>Hi 👋 I am Chong Xian.</span>
       <br />
       <div class="flex">
@@ -42,6 +42,10 @@
         I solve problems with user-first products, design and build them with easy-to-use experience ❤️.
       </div>
     </div>
+
+    <div class="flex justify-end box-border items-end w-screen overflow-hidden pt-32 sm:px-64 sm:pt-24">
+      <img class="w-[95%] translate-x-16 sm:w-[40%]" src="@/assets/images/avatar.png" />
+    </div>
     <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
     <!-- <div
       class="canva flex justify-end box-border items-end w-screen overflow-hidden p-20 sm:px-64 sm:pb-20"
@@ -57,7 +61,7 @@
       </div>
     </div> -->
 
-    <Divider id="works" />
+    <Divider id="works" class="mt-0" />
 
     <div class="mb-40" style="height: 80vh">
       <h1 class="mx-8 sm:mx-64 text-xl font-bold mb-2">Works</h1>
