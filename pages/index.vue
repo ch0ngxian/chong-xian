@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="flex justify-end box-border items-end w-screen overflow-hidden pt-32 sm:px-64 sm:pt-24">
+    <div class="flex justify-end box-border items-end w-screen overflow-hidden sm:px-64 sm:pt-24">
       <img class="w-[95%] translate-x-16 sm:w-[40%]" src="@/assets/images/avatar.png" />
     </div>
     <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
