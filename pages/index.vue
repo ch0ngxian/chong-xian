@@ -14,7 +14,7 @@
     <Divider />
 
     <!-- I am a horizontal person, because I belive learning knowledge from different field can create exponential synergy to -->
-    <div class="mx-8 sm:mx-64 mt-20" style="height: 20vh">
+    <div class="mx-8 sm:mx-64 mt-10 sm:mt-20" style="height: 20vh">
       <span>Hi 👋 I am Chong Xian.</span>
       <br />
       <div class="flex">
@@ -43,8 +43,8 @@
       </div>
     </div>
 
-    <div class="flex justify-end box-border items-end w-screen overflow-hidden sm:px-64 sm:pt-24">
-      <img class="w-[95%] translate-x-16 sm:w-[40%]" src="@/assets/images/avatar.png" />
+    <div class="flex justify-end box-border items-end w-screen overflow-hidden pt-8 sm:px-64 sm:pt-24">
+      <img class="w-[80%] translate-x-12 sm:w-[40%]" src="@/assets/images/avatar.png" />
     </div>
     <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
     <!-- <div
