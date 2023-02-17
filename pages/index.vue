@@ -39,27 +39,19 @@
         <a href="https://www.easystore.co/" target="_blank" class="underline"
           >EasyStore</a
         >. <br />
-        I solve problems with user-first products, design and build them with easy-to-use experience ❤️.
+        I solve problems with user-first products, design and build them with
+        easy-to-use experience ❤️.
       </div>
     </div>
 
-    <div class="flex justify-end box-border items-end w-screen overflow-hidden pt-14 sm:px-64 sm:pt-24">
-      <img class="w-[80%] translate-x-12 sm:w-[40%]" src="@/assets/images/avatar.png" />
-    </div>
-    <!-- flex justify-end items-end p-20  translate-x-24 sm:-translate-x-24 sm:mx-64 sm:mb-20 -->
-    <!-- <div
-      class="canva flex justify-end box-border items-end w-screen overflow-hidden p-20 sm:px-64 sm:pb-20"
+    <div
+      class="flex justify-end box-border items-end w-screen overflow-hidden pt-14 sm:px-64 sm:pt-24"
     >
-      <div
-        class="core rounded-full bg-black h-56 w-56 translate-x-24 sm:-translate-x-0"
-      >
-        <div class="orbit"></div>
-        <div class="orbit"></div>
-        <div class="orbit"></div>
-        <div class="orbit"></div>
-        <div class="orbit"></div>
-      </div>
-    </div> -->
+      <img
+        class="w-[80%] translate-x-12 sm:w-[40%]"
+        src="@/assets/images/avatar.png"
+      />
+    </div>
 
     <Divider id="works" class="mt-0" />
 
@@ -76,11 +68,19 @@
           url="https://www.jsoner.app/"
           icon-url="https://www.jsoner.app/favicon.ico"
         />
+
         <AppCard
           title="Draw a Line | Easy line graph illustrating tool"
           description="Get elegant and highly customized line graph in a glance."
           url="https://draw-a-line.netlify.app/"
           icon-url="https://draw-a-line.netlify.app/logo.svg"
+        />
+
+        <AppCard
+          title="EasyStore Double Eleven Festival Page 2022"
+          description="Real-time sales monitoring page for Double Eleven Festival 2022."
+          image-url="/assets/images/double-eleven-preview.png"
+          icon-url="/assets/images/easystore-logo-icon.svg"
         />
       </div>
     </div>
@@ -149,17 +149,6 @@
 </template>
 
 <script>
-// import {
-//   Color,
-//   Fog,
-//   Mesh,
-//   MeshBasicMaterial,
-//   PerspectiveCamera,
-//   PointLight,
-//   Scene,
-//   SphereGeometry,
-//   WebGLRenderer,
-// } from 'three'
 import Divider from '../layouts/components/Divider.vue'
 import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
@@ -211,40 +200,6 @@ export default {
   mounted() {
     this.initCircleCursor()
     this.initRolesFadeEffect()
-
-    // const scene = new Scene()
-    // scene.background = new Color('transparent')
-    // const geometry = new SphereGeometry(1, 64, 64)
-    // const material = new MeshBasicMaterial({
-    //   color: new Color('black'),
-    //   fog: true,
-    // })
-    // const sphere = new Mesh(geometry, material)
-    // scene.add(sphere)
-    // scene.fog = new Fog(0xffffff, 10, 100)
-    // const light = new PointLight(0xffffff)
-    // light.position.set(-1, 2, 4)
-    // scene.add(light)
-    // const renderer = new WebGLRenderer({
-    //   canvas: this.$refs.sphere_canva,
-    //   antialias: true,
-    //   alpha: true,
-    // })
-    // renderer.setPixelRatio(window.devicePixelRatio)
-    // const camera = new PerspectiveCamera(
-    //   75,
-    //   window.innerWidth / window.innerHeight,
-    //   0.1,
-    //   1000
-    // )
-    // camera.position.set(0, 0, 5)
-    // function animate() {
-    //   requestAnimationFrame(animate)
-    //   sphere.rotation.x += 0.01
-    //   sphere.rotation.y += 0.01
-    //   renderer.render(scene, camera)
-    // }
-    // animate()
   },
   methods: {
     timeout(ms) {
@@ -309,6 +264,7 @@ export default {
 .role {
   position: relative;
 }
+
 .role:after {
   display: block;
   position: absolute;
@@ -325,70 +281,5 @@ export default {
 
 .role.active:after {
   transform: scaleX(0);
-}
-
-.canva .core {
-  transform-style: preserve-3d;
-  animation: stand infinite linear;
-}
-
-.canva .orbit:nth-child(1) {
-  @apply absolute border-8 bg-transparent rounded-full z-50;
-  top: -10rem;
-  left: -10rem;
-  width: 250%;
-  height: 250%;
-  transform-style: preserve-3d;
-  transform: rotateX(80deg) rotateY(20deg);
-}
-/*
-.canva .orbit:nth-child(2) {
-  @apply absolute border-8 bg-transparent rounded-full z-50;
-  top: -7rem;
-  left: -6rem;
-  width: 150%;
-  height: 150%;
-  transform-style: preserve-3d;
-  transform: rotateX(80deg) rotateY(-20deg);
-} */
-
-.canva .orbit:nth-child(3) {
-  @apply absolute border-8 bg-transparent rounded-full z-50;
-  top: -7rem;
-  left: -8rem;
-  width: 200%;
-  height: 200%;
-  transform-style: preserve-3d;
-  transform: rotateX(80deg) rotateY(-20deg);
-}
-
-/* .canva .orbit:nth-child(4) {
-  @apply absolute border-8 bg-transparent rounded-full z-50;
-  top: 1rem;
-  left: -2rem;
-  width: 150%;
-  height: 150%;
-  transform-style: preserve-3d;
-  transform: rotateX(80deg) rotateY(-20deg);
-} */
-
-/* .canva .orbit:nth-child(5) {
-  @apply absolute border-8 bg-transparent rounded-full z-50;
-  top: -7rem;
-  left: -4rem;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateX(80deg) rotateY(-20deg);
-} */
-
-@keyframes stand {
-  0% {
-    transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
-  }
-
-  100% {
-    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
-  }
 }
 </style>

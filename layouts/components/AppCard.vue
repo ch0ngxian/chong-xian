@@ -7,8 +7,9 @@
           <div class="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
           <div class="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
         </div>
-        <div class="iframe-wrapper relative">
+        <div class="preview-wrapper relative">
           <iframe
+            v-if="url"
             class="pointer-events-none rounded-b-lg"
             style="transform-origin: 0 0; transform: scale(0.7)"
             width="143%"
@@ -17,6 +18,9 @@
             :src="url"
           >
           </iframe>
+
+          <img v-else-if="imageUrl" class="rounded-b-lg" :src="imageUrl" />
+
           <div
             class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5 rounded-b-lg"
           >
@@ -54,20 +58,26 @@ export default {
     },
     url: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
+    },
+    imageUrl: {
+      type: String,
+      required: false,
+      default: null,
     },
   },
 }
 </script>
 
 <style scoped>
-.iframe-wrapper {
+.preview-wrapper {
   height: 26rem;
   width: 16rem;
 }
 
 @media (min-width: 640px) {
-  .iframe-wrapper {
+  .preview-wrapper {
     height: 32rem;
     width: 26rem;
   }
@@ -82,6 +92,7 @@ export default {
 .glow {
   z-index: 1;
 }
+
 .glow::after {
   position: absolute;
   content: '';
@@ -109,6 +120,7 @@ export default {
 .glow:hover::after {
   opacity: 1;
 }
+
 .glow:active::after {
   opacity: 1;
 }
@@ -117,6 +129,7 @@ export default {
   0% {
     --rotate: 0deg;
   }
+
   100% {
     --rotate: 360deg;
   }
@@ -126,9 +139,11 @@ export default {
   0% {
     transform: scale(0.9);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(0.9);
   }
