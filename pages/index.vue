@@ -79,8 +79,8 @@
         <AppCard
           title="EasyStore Double Eleven Festival Page 2022"
           description="Real-time sales monitoring page for Double Eleven Festival 2022."
-          image-url="/assets/images/double-eleven-preview.png"
-          icon-url="/assets/images/easystore-logo-icon.svg"
+          :image-url="double_eleven_preview"
+          :icon-url="easystore_logo"
         />
       </div>
     </div>
@@ -153,6 +153,9 @@ import Divider from '../layouts/components/Divider.vue'
 import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
 
+import doubleElevenPreview from '@/assets/images/double-eleven-preview.png'
+import easystoreLogo from '@/assets/images/easystore-logo-icon.svg'
+
 export default {
   components: { Header, Divider, AppCard },
 
@@ -194,6 +197,8 @@ export default {
           y: 0,
         },
       },
+      double_eleven_preview: doubleElevenPreview,
+      easystore_logo: easystoreLogo,
     }
   },
   created() {},
