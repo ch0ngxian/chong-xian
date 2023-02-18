@@ -81,6 +81,7 @@
           description="Real-time sales monitoring page for Double Eleven Festival 2022."
           :image-url="double_eleven_preview"
           :icon-url="easystore_logo"
+          @click="double_eleven_dialog.visible = true"
         />
       </div>
     </div>
@@ -141,10 +142,30 @@
     </div>
     <div
       id="cursor-circle"
-      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-50 block"
+      class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-40 block"
       :class="{ invisible: circle.is_invisible }"
       :style="{ left: `${circle.pos.x}px`, top: `${circle.pos.y}px` }"
     ></div>
+
+    <div
+      v-if="double_eleven_dialog.visible"
+      class="bg-black bg-opacity-50 h-screen w-screen flex justify-center items-center z-50 fixed top-0 left-0"
+      @click="double_eleven_dialog.visible = false"
+    >
+      <div
+        class="w-11/12 md:w-1/2 md:h-1/2 aspect-video rounded-lg overflow-hidden"
+      >
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/3UieV-l5xwE"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -199,6 +220,9 @@ export default {
       },
       double_eleven_preview: doubleElevenPreview,
       easystore_logo: easystoreLogo,
+      double_eleven_dialog: {
+        visible: false,
+      },
     }
   },
   created() {},
