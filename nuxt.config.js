@@ -109,5 +109,14 @@ export default {
 
   googleAnalytics: {
     id: 'G-8Z3M0Y75X9'
-  }
+  },
+
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: 'G-8Z3M0Y75X9',
+      debug: {
+        sendHitTask: true
+      }
+    }
+ },
 }
