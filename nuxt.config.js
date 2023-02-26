@@ -77,7 +77,7 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@/plugins/gtag'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -91,7 +91,6 @@ export default {
 
     'nuxt-vite',
 
-    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -107,16 +106,4 @@ export default {
     },
   },
 
-  googleAnalytics: {
-    id: 'G-8Z3M0Y75X9'
-  },
-
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: 'G-8Z3M0Y75X9',
-      debug: {
-        sendHitTask: true
-      }
-    }
- },
 }
