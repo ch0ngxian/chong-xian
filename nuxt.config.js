@@ -90,6 +90,8 @@ export default {
     '@nuxtjs/tailwindcss',
 
     'nuxt-vite',
+
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -104,4 +106,8 @@ export default {
       },
     },
   },
+
+  googleAnalytics: {
+    id: 'G-8Z3M0Y75X9'
+  }
 }
