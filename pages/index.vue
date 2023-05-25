@@ -70,19 +70,29 @@
         />
 
         <AppCard
+          title="EasyStore Double Eleven Festival Page 2022"
+          description="Real-time sales monitoring page for Double Eleven Festival 2022."
+          :image-url="double_eleven_preview"
+          :icon-url="easystore_logo"
+          @click="showVideoDialog('https://www.youtube.com/embed/3UieV-l5xwE')"
+        />
+
+        <AppCard
+          title="EasyStore Internal Chrome Extension"
+          description="Quick access tool for EasyStore teammates that show analytics"
+          :image-url="chrome_extension_preview"
+          :icon-url="chrome_web_store_logo"
+          @click="showVideoDialog('https://www.youtube.com/embed/MTWDtjDOGck')"
+        />
+
+        <AppCard
           title="Draw a Line | Easy line graph illustrating tool"
           description="Get elegant and highly customized line graph in a glance."
           url="https://draw-a-line.netlify.app/"
           icon-url="https://draw-a-line.netlify.app/logo.svg"
         />
 
-        <AppCard
-          title="EasyStore Double Eleven Festival Page 2022"
-          description="Real-time sales monitoring page for Double Eleven Festival 2022."
-          :image-url="double_eleven_preview"
-          :icon-url="easystore_logo"
-          @click="double_eleven_dialog.visible = true"
-        />
+
       </div>
     </div>
 
@@ -148,17 +158,17 @@
     ></div>
 
     <div
-      v-if="double_eleven_dialog.visible"
+      v-if="video_dialog.visible && video_dialog.url"
       class="bg-black bg-opacity-50 h-screen w-screen flex justify-center items-center z-50 fixed top-0 left-0"
-      @click="double_eleven_dialog.visible = false"
+      @click="video_dialog.visible = false"
     >
       <div
-        class="w-11/12 md:w-1/2 md:h-1/2 aspect-video rounded-lg overflow-hidden"
+        class="w-11/12 md:w-3/4 md:h-3/4 aspect-video rounded-lg overflow-hidden"
       >
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/3UieV-l5xwE"
+          :src="video_dialog.url"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -175,7 +185,9 @@ import AppCard from '../layouts/components/AppCard.vue'
 import Header from '~/layouts/components/Header.vue'
 
 import doubleElevenPreview from '@/assets/images/double-eleven-preview.png'
+import chromeExtensionPreview from '@/assets/images/chrome-extension-preview.png'
 import easystoreLogo from '@/assets/images/easystore-logo-icon.svg'
+import chromeWebStoreLogo from '@/assets/images/chrome-web-store-icon.png'
 
 export default {
   components: { Header, Divider, AppCard },
@@ -219,9 +231,12 @@ export default {
         },
       },
       double_eleven_preview: doubleElevenPreview,
+      chrome_extension_preview: chromeExtensionPreview,
       easystore_logo: easystoreLogo,
-      double_eleven_dialog: {
+      chrome_web_store_logo: chromeWebStoreLogo,
+      video_dialog: {
         visible: false,
+        url: null
       },
     }
   },
@@ -285,6 +300,10 @@ export default {
         _this.circle.pos.y += (_this.mouse.pos.y - _this.circle.pos.y) / 6
       }, 10)
     },
+    showVideoDialog(url) {
+      this.video_dialog.url = url;
+      this.video_dialog.visible = true
+    }
   },
 }
 </script>

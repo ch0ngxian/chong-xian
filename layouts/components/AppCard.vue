@@ -28,7 +28,7 @@
             class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5 rounded-b-lg"
           >
             <img
-              class="h-10 w-10 border border-white rounded mb-3"
+              class="h-10 w-10 border border-white rounded mb-3 object-cover"
               :src="iconUrl"
             />
             <div class="text-lg font-medium mb-2">
