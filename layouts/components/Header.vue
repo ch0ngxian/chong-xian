@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between pt-5 mt-5 mx-10 sm:mx-64">
+  <div class="flex justify-between pt-10 mx-10 sm:mx-64">
     <a class="cursor-pointer" href="/">
       <svg
         ref="logo"
