@@ -88,8 +88,8 @@
         <AppCard
           title="Draw a Line | Easy line graph illustrating tool"
           description="Get elegant and highly customized line graph in a glance."
-          url="https://draw-a-line.netlify.app/"
-          icon-url="https://draw-a-line.netlify.app/logo.svg"
+          url="https://draw-a-line.vercel.app/"
+          icon-url="https://draw-a-line.vercel.app/logo.svg"
         />
 
 
