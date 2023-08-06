@@ -63,6 +63,13 @@
         class="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-8 sm:px-64 py-36 -mt-28"
       >
         <AppCard
+          title="Scrum Poker | Simple Way to Estimate Story Point"
+          description="Scrum Poker helps to estimate the story point of a task in a more fun and engaging way."
+          url="https://scrumpoker.chongxian.dev/"
+          icon-url="https://scrumpoker.chongxian.dev/favicon.ico"
+        />
+
+        <AppCard
           title="JSONer | A minimalist JSON beautifier"
           description="JSONer helps to format the input JSON and beautify it to display in a more readable way."
           url="https://www.jsoner.app/"
@@ -91,8 +98,6 @@
           url="https://draw-a-line.vercel.app/"
           icon-url="https://draw-a-line.vercel.app/logo.svg"
         />
-
-
       </div>
     </div>
 
@@ -236,7 +241,7 @@ export default {
       chrome_web_store_logo: chromeWebStoreLogo,
       video_dialog: {
         visible: false,
-        url: null
+        url: null,
       },
     }
   },
@@ -301,9 +306,9 @@ export default {
       }, 10)
     },
     showVideoDialog(url) {
-      this.video_dialog.url = url;
+      this.video_dialog.url = url
       this.video_dialog.visible = true
-    }
+    },
   },
 }
 </script>
