@@ -67,6 +67,7 @@
           description="Scrum Poker helps to estimate the story point of a task in a more fun and engaging way."
           url="https://scrumpoker.chongxian.dev/"
           icon-url="https://scrumpoker.chongxian.dev/favicon.ico"
+          icon-background="#FFFFFF"
         />
 
         <AppCard

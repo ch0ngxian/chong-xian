@@ -29,6 +29,7 @@
           >
             <img
               class="h-10 w-10 border border-white rounded mb-3 object-cover"
+              :style="`background-color: ${iconBackground}`"
               :src="iconUrl"
             />
             <div class="text-lg font-medium mb-2">
@@ -59,6 +60,10 @@ export default {
     iconUrl: {
       type: String,
       required: true,
+    },
+    iconBackground: {
+      type: String,
+      default: "transparent",
     },
     url: {
       type: String,
