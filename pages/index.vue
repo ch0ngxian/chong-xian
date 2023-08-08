@@ -236,6 +236,7 @@ export default {
           y: 0,
         },
       },
+      scroll_y: 0,
       double_eleven_preview: doubleElevenPreview,
       chrome_extension_preview: chromeExtensionPreview,
       easystore_logo: easystoreLogo,
@@ -246,10 +247,13 @@ export default {
       },
     }
   },
-  created() {},
+  created() {
+
+  },
   mounted() {
     this.initCircleCursor()
     this.initRolesFadeEffect()
+    window.addEventListener('scroll', this.onPageScroll);
   },
   methods: {
     timeout(ms) {
@@ -258,6 +262,11 @@ export default {
     onMouseMove(e) {
       this.mouse.pos.x = e.pageX - 20
       this.mouse.pos.y = e.pageY - 20
+    },
+    onPageScroll(e) {
+      this.circle.pos.y += (window.scrollY - this.scroll_y) / 6;
+      this.mouse.pos.y += window.scrollY - this.scroll_y;
+      this.scroll_y = window.scrollY
     },
 
     initRolesFadeEffect() {
@@ -299,12 +308,10 @@ export default {
 
       this.circle.is_invisible = false
 
-      const _this = this
-
-      setInterval(() => {
-        _this.circle.pos.x += (_this.mouse.pos.x - _this.circle.pos.x) / 6
-        _this.circle.pos.y += (_this.mouse.pos.y - _this.circle.pos.y) / 6
-      }, 10)
+      this.interval = setInterval(() => {
+        this.circle.pos.x += (this.mouse.pos.x - this.circle.pos.x) / 15
+        this.circle.pos.y += (this.mouse.pos.y - this.circle.pos.y) / 15
+      }, 1)
     },
     showVideoDialog(url) {
       this.video_dialog.url = url
