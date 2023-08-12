@@ -9,15 +9,47 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <g clip-path="url(#clip0_17_2)">
-          <path d="M66 0H0V79H66V0Z" fill="black" stroke="black" />
-          <path d="M81 78V1L130 78H81Z" fill="black" stroke="black" />
-          <circle cx="159" cy="50" r="29" fill="black" />
-          <path d="M203 77V21L251 77H203Z" fill="black" stroke="black" />
-          <path d="M260 102V22H313V102H260Z" fill="black" stroke="black" />
-          <path d="M364 79V1H427V79H364Z" fill="black" stroke="black" />
-          <path d="M442 78V21H464V78H442Z" fill="black" stroke="black" />
-          <path d="M479 78V21H522V78H479Z" fill="black" stroke="black" />
-          <path d="M537 80V23L584 80H537Z" fill="black" stroke="black" />
+          <path
+            d="M66 0H0V79H66V0Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <path
+            d="M81 78V1L130 78H81Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <circle cx="159" cy="50" r="29" fill="currentColor" />
+          <path
+            d="M203 77V21L251 77H203Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <path
+            d="M260 102V22H313V102H260Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <path
+            d="M364 79V1H427V79H364Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <path
+            d="M442 78V21H464V78H442Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <path
+            d="M479 78V21H522V78H479Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
+          <path
+            d="M537 80V23L584 80H537Z"
+            fill="currentColor"
+            stroke="currentColor"
+          />
         </g>
         <defs>
           <clipPath id="clip0_17_2">
@@ -45,7 +77,8 @@ export default {
 .nav-item:after {
   display: block;
   content: '';
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px;
+  @apply border-black dark:border-white;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }

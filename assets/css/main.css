@@ -11,3 +11,7 @@
 html {
   @apply scroll-smooth;
 }
+
+body {
+  @apply dark:bg-black dark:text-[#EDEDED];
+}

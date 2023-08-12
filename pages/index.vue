@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white" @mousemove="onMouseMove">
+  <div class="bg-white dark:bg-black" @mousemove="onMouseMove">
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,6 @@
 
     <Divider />
 
-    <!-- I am a horizontal person, because I belive learning knowledge from different field can create exponential synergy to -->
     <div class="mx-8 sm:mx-64 mt-10 sm:mt-20" style="height: 20vh">
       <span>Hi 👋 I am Chong Xian.</span>
       <br />
@@ -57,7 +56,7 @@
 
     <div class="mb-40" style="height: 80vh">
       <h1 class="mx-8 sm:mx-64 text-xl font-bold mb-2">Works</h1>
-      <div class="mx-8 sm:mx-64">I built these apps</div>
+      <div class="mx-8 sm:mx-64 dark:text-[#A1A1A1]">I built these apps</div>
 
       <div
         class="flex w-screen box-border overflow-x-scroll overflow-y-hidden px-8 sm:px-64 py-36 -mt-28"
@@ -106,19 +105,19 @@
 
     <div class="mx-8 sm:mx-64 pb-40">
       <h1 class="text-xl font-bold mb-2">Contacts</h1>
-      <div class="">Let's say hi</div>
+      <div class="dark:text-[#A1A1A1]">Let's say hi</div>
 
       <div class="mt-3 -ml-3">
         <a
           href="mailto:chongxian.goh@gmail.com"
-          class="flex items-center underline hover:bg-gray-100 sm:w-96 p-3 rounded-lg transition"
+          class="flex items-center underline hover:bg-gray-100 dark:hover:bg-[#171717] sm:w-96 p-3 rounded-lg transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-7 h-7 mr-2"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke="#000000"
+            stroke="currentColor"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -133,14 +132,14 @@
         <a
           href="https://www.linkedin.com/in/chongxian/"
           target="_blank"
-          class="flex items-center underline hover:bg-gray-100 sm:w-96 p-3 rounded-lg transition"
+          class="flex items-center underline hover:bg-gray-100 dark:hover:bg-[#171717] sm:w-96 p-3 rounded-lg transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-7 h-7 mr-2"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke="#000000"
+            stroke="currentColor"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -156,6 +155,24 @@
         </a>
       </div>
     </div>
+
+    <div class="mx-8 sm:mx-64 pb-40 flex justify-end items-center">
+      <div class="rounded bg-black h-1.5 w-1.5 mr-2"></div>
+      <button
+        class="text-dark dark:text-[#333333]"
+        @click="setThemeMode('light')"
+      >
+        Light
+      </button>
+      <div class="ml-7 rounded bg-white h-1.5 w-1.5 mr-2"></div>
+      <button
+        class="text-[#E5E7EB] dark:text-white"
+        @click="setThemeMode('dark')"
+      >
+        Dark
+      </button>
+    </div>
+
     <div
       id="cursor-circle"
       class="w-10 h-10 bg-gray-900 rounded-full absolute pointer-events-none invert mix-blend-difference z-40 block"
@@ -247,13 +264,11 @@ export default {
       },
     }
   },
-  created() {
-
-  },
+  created() {},
   mounted() {
     this.initCircleCursor()
     this.initRolesFadeEffect()
-    window.addEventListener('scroll', this.onPageScroll);
+    window.addEventListener('scroll', this.onPageScroll)
   },
   methods: {
     timeout(ms) {
@@ -264,8 +279,8 @@ export default {
       this.mouse.pos.y = e.pageY - 20
     },
     onPageScroll(e) {
-      this.circle.pos.y += (window.scrollY - this.scroll_y) / 6;
-      this.mouse.pos.y += window.scrollY - this.scroll_y;
+      this.circle.pos.y += (window.scrollY - this.scroll_y) / 6
+      this.mouse.pos.y += window.scrollY - this.scroll_y
       this.scroll_y = window.scrollY
     },
 
@@ -316,6 +331,17 @@ export default {
     showVideoDialog(url) {
       this.video_dialog.url = url
       this.video_dialog.visible = true
+    },
+
+    setThemeMode(mode) {
+      mode = mode === 'light' ? 'light' : 'dark'
+      localStorage.setItem('theme', mode)
+
+      if (mode === 'dark') {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
     },
   },
 }

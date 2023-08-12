@@ -30,7 +30,7 @@ export default {
         hid: 'og:description',
         property: 'og:description',
         content:
-        'Hi, I am Chong Xian. Full stack developers, product managers, certified scrum master, ui ux enthusiast.',
+          'Hi, I am Chong Xian. Full stack developers, product managers, certified scrum master, ui ux enthusiast.',
       },
       {
         hid: 'og:type',
@@ -77,24 +77,20 @@ export default {
   css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/gtag'],
+  plugins: ['@/plugins/gtag', '@/plugins/theme'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-
-    'nuxt-vite',
-
-  ],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', 'nuxt-vite'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
+
+  colorMode: {
+    classSuffix: '',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -105,5 +101,4 @@ export default {
       },
     },
   },
-
 }

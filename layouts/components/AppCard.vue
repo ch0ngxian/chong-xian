@@ -4,8 +4,8 @@
     @click="$emit('click')"
   >
     <a class="flex" :href="url" target="_blank">
-      <div class="overflow-hidden rounded-lg border border-gray-200">
-        <div class="h-7 w-full bg-white flex items-center border-b">
+      <div class="overflow-hidden rounded-lg border border-gray-200 dark:border-[#333333]">
+        <div class="h-7 w-full bg-white dark:bg-[#111111] flex items-center border-b dark:border-[#333333]">
           <div class="rounded-full h-2.5 w-2.5 bg-[#FF5F57] ml-3"></div>
           <div class="rounded-full h-2.5 w-2.5 bg-[#FEBC2E] ml-1"></div>
           <div class="rounded-full h-2.5 w-2.5 bg-[#28C840] ml-1"></div>
@@ -28,7 +28,7 @@
             class="text-white absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-gray-900 to-transparent flex flex-col justify-end p-5 rounded-b-lg"
           >
             <img
-              class="h-10 w-10 border border-white rounded mb-3 object-cover"
+              class="h-10 w-10 border border-white dark:border-[#333333] rounded mb-3 object-cover"
               :style="`background-color: ${iconBackground}`"
               :src="iconUrl"
             />
@@ -124,6 +124,19 @@ export default {
   );
   animation: spin 8s linear infinite, glow 5s linear infinite;
   transition: opacity 1s ease-in-out;
+}
+
+.dark.glow::after {
+  background-image: linear-gradient(
+    var(--rotate, 132deg),
+    #fb7b4a,
+    #ff9c48,
+    #fac83b,
+    #64d39b,
+    #5b97f2,
+    #7a79fe,
+    #c256d6
+  );
 }
 
 .glow:hover::after {
